@@ -1,0 +1,321 @@
+/*Contents
+
+    1. Grids section
+    2. General Section
+    3. Header Section
+    4. Colours Section
+    5. Fonts Section
+    6. Text Styles Section
+
+*/
+
+/*  1. Grids section */
+header {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,1fr);
+    grid-template-areas:    "header header"
+                            "buttons buttons";
+    align-items: center;
+    justify-items: center;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows:0.5fr repeat(2,0.75fr) 0.1fr 0.5fr repeat(2,1fr) 0.1fr 0.5fr repeat(2,1fr);
+    grid-template-areas:    "coloursHeader coloursHeader"
+                            "coloursFirstRow1 coloursFirstRow2"
+                            "coloursSecondRow1 coloursSecondRow2"
+                            "space1 space1"
+                            "fontsHeader fontsHeader"
+                            "fontsFirstRow1 fontsFirstRow2"
+                            "fontsSecondRow1 fontsSecondRow2"
+                            "space2 space2"
+                            "textStylesHeader textStylesHeader"
+                            "textStylesFirstRow1 textStylesFirstRow2"
+                            "textStylesSecondRow1 textStylesSecondRow2";
+}
+
+footer {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows:75px;
+    grid-template-areas:    "footer footer";
+}
+
+/* --------------- Grid Section End --------------- */ 
+
+/*  2. General section */
+
+html {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.panel {
+    padding:20px;
+}
+
+/* --------------- General Section End --------------- */ 
+
+/* 3. Header Section */
+
+header h1 {
+    grid-area: header;
+}
+
+nav {
+    grid-area: buttons;
+    width: 100%;
+    display: flex;
+}
+
+nav ul {
+    display: inline-flex;
+    justify-content: space-evenly;
+    width: 100%;
+    list-style-type: none;
+}
+
+nav li {
+    padding:20px;
+}
+
+.currentPage {
+    background-color: lightgray;
+}
+
+/* --------------- Header Section End --------------- */
+
+/* 4. Colours Section */
+
+#colours {
+    display: contents;
+    text-align: center;
+    border-top: 1px solid gray;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+}
+
+.colourLabel, .colourHex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height:50%;
+    margin:0;
+    font-size: 1.2rem;
+}
+
+#colours h2 {
+    grid-area: coloursHeader;
+    align-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:0;
+    padding-top: 15px;
+    border-top: 1px solid gray;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+}
+
+#colourPanel1 {
+    grid-area: coloursFirstRow1;
+    border-left: 1px solid gray;
+}
+
+#colourPanel2 {
+    grid-area: coloursFirstRow2;
+    border-right: 1px solid gray;
+}
+
+#colourPanel3 {
+    grid-area: coloursSecondRow1;
+    border-left: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+
+#colourPanel4 {
+    grid-area: coloursSecondRow2;
+    border-right: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+
+#colourPanel1 .colourHex, #colourPanel1 .colourLabel {
+    background-color: #52E6B8;
+    color: whitesmoke;
+}
+
+#colourPanel2 .colourHex, #colourPanel2 .colourLabel {
+    background-color: #75FFD3;
+    color: whitesmoke;
+}
+
+#colourPanel3 .colourHex, #colourPanel3 .colourLabel {
+    background-color: #289975;
+    color: whitesmoke;
+}
+
+#colourPanel4 .colourHex, #colourPanel4 .colourLabel {
+    background-color: #E67153;
+    color: whitesmoke;
+}
+/* --------------- Colours Section End --------------- */
+
+/* 5. Fonts Section */
+
+#fonts {
+    display: contents;
+    text-align: left;
+    border-top: 1px solid gray;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+}
+
+#fonts h2 {
+    grid-area: fontsHeader;
+    align-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:0;
+    padding-top: 15px;
+    border-top: 1px solid gray;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+}
+
+#fontsPanel1 {
+    grid-area: fontsFirstRow1;
+    border-left: 1px solid gray;
+    font-family: 'Segoe UI';
+}
+
+#fontsPanel2 {
+    grid-area: fontsFirstRow2;
+    border-right: 1px solid gray;
+    font-family: Tahoma;
+}
+
+#fontsPanel3 {
+    grid-area: fontsSecondRow1;
+    border-left: 1px solid gray;
+    border-bottom: 1px solid gray;
+    font-family: Geneva;
+}
+
+#fontsPanel4 {
+    grid-area: fontsSecondRow2;
+    border-right: 1px solid gray;
+    border-bottom: 1px solid gray;
+    font-family: Verdana;
+}
+
+.fontName {
+    text-decoration: underline;
+    padding: 0 40px;
+}
+
+#fonts .panel {
+    padding: 0 20px;
+    line-height: 2;
+    font-size: 1.2rem;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.italics {
+    font-style: italic;
+}
+
+#fonts ul {
+    list-style-type: none;
+}
+
+/* --------------- Fonts Section End --------------- */
+
+/* 6. Text Style Section */
+
+#textStyles {
+    display: contents;
+    text-align: left;
+    border-top: 1px solid gray;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+}
+
+#textStyles h2 {
+    grid-area: textStylesHeader;
+    align-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:0;
+    padding-top: 15px;
+    border-top: 1px solid gray;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+}
+
+#textStyles .panel {
+    padding: 0 30%;
+}
+
+#textStylesPanel1 {
+    grid-area: textStylesFirstRow1;
+    border-left: 1px solid gray;
+    font-family: 'Segoe UI';
+}
+
+#textStylesPanel2 {
+    grid-area: textStylesFirstRow2;
+    border-right: 1px solid gray;
+    font-family: Tahoma;
+}
+
+#textStylesPanel3 {
+    grid-area: textStylesSecondRow1;
+    border-left: 1px solid gray;
+    border-bottom: 1px solid gray;
+    font-family: Geneva;
+}
+
+#textStylesPanel4 {
+    grid-area: textStylesSecondRow2;
+    border-right: 1px solid gray;
+    border-bottom: 1px solid gray;
+    font-family: Verdana;
+}
+
+#textStylesPanel1 .styleName {
+    font-weight: 600;
+    font-size: 32px;
+    font-family: 'Segoe UI';
+}
+
+#textStylesPanel2 .styleName {
+    font-weight: 500;
+    font-size: 24px;
+    font-family: Tahoma;
+}
+
+#textStylesPanel3 .styleName {
+    font-weight: 400;
+    font-size: 16px;
+    font-family: Geneva;
+}
+
+#textStylesPanel4 .styleName {
+    font-weight: 400;
+    font-size: 16px;
+    font-family: Verdana;
+}
+
+#textStyles ul {
+    line-height: 2;
+}
+
+/* --------------- Text Style Section end --------------- */
